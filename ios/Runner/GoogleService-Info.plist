@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>392262726361-d719cf8hj2m9tkkmht811fa9lh14gg0p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.392262726361-d719cf8hj2m9tkkmht811fa9lh14gg0p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB5yrrH_S7S3rTnfZIvdf2rxKaiitW9FJs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>392262726361</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.stints</string>
+	<key>PROJECT_ID</key>
+	<string>stints-tbi</string>
+	<key>STORAGE_BUCKET</key>
+	<string>stints-tbi.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:392262726361:ios:16a18beb0f724524</string>
+	<key>DATABASE_URL</key>
+	<string>https://stints-tbi.firebaseio.com</string>
+</dict>
+</plist>

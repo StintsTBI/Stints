@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "392262726361",
+    "firebase_url": "https://stints-tbi.firebaseio.com",
+    "project_id": "stints-tbi",
+    "storage_bucket": "stints-tbi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392262726361:android:16a18beb0f724524",
+        "android_client_info": {
+          "package_name": "com.example.stints"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392262726361-akfnlngoqk608ts9v4tt6kmujj8tu9j7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.stints",
+            "certificate_hash": "96a13a653e076687d4a70c23b388988e45608dba"
+          }
+        },
+        {
+          "client_id": "392262726361-8po4o3ujmk69vlgauj8v3924h28vcusc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLjOczXTsYfn2cAWnnj-KtrnITnANGmxo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392262726361-8po4o3ujmk69vlgauj8v3924h28vcusc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
