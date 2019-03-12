@@ -2,9 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:stints/assets/constants.dart';
 
-class SignIN extends StatelessWidget {
+class SignIn extends StatefulWidget {
+  @override
+  SignINstate createState() => SignINstate();
+}
+
+class SignINstate extends State<SignIn> {
+  bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: WidgetColors.primaryColor,
       body: Stack(
@@ -29,16 +37,136 @@ class SignIN extends StatelessWidget {
                   size: 24,
                   color: Colors.white,
                 ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
           ),
           Padding(
-              padding: EdgeInsets.only(top: 186, left: 36),
+              padding: EdgeInsets.only(top: 186, left: 36, right: 36),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   NormalText(
                     "Email ID",
                     color: Colors.white.withOpacity(0.5),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffEF4700)),
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        hintText: "Email address",
+                        hintStyle:
+                            TextStyle(color: Colors.white.withOpacity(0.5)),
+                        border: InputBorder.none,
+                        prefixIcon: Icon(
+                          Icons.account_circle,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  NormalText(
+                    "Password",
+                    color: Colors.white.withOpacity(0.5),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color(0xffEF4700)),
+                    child: TextField(
+                      obscureText: _obscureText,
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                          hintText: "password",
+                          hintStyle:
+                              TextStyle(color: Colors.white.withOpacity(0.5)),
+                          border: InputBorder.none,
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: Colors.white,
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _obscureText = !_obscureText;
+                              });
+                            },
+                            icon: Icon(
+                              Icons.remove_red_eye,
+                              color: Colors.black,
+                            ),
+                          )),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Container(
+                      height: 45,
+                      width: 145,
+                      child: OutlineButton(
+                        highlightedBorderColor: Colors.white,
+                        shape: StadiumBorder(),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Text(
+                              "Sign in via",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Icon(Icons.home)
+                          ],
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Container(
+                      height: 45,
+                      width: 145,
+                      child: RaisedButton(
+                        color: Colors.white,
+                        shape: StadiumBorder(),
+                        child: SmallText("Login",
+                            color: WidgetColors.primaryColor),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: GestureDetector(
+                      child: Text(
+                        'Reset Password',
+                        style: TextStyle(
+                          color: Colors.white,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
                   )
                 ],
               )),
