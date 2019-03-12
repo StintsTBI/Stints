@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stints/pages/landing.dart';
 
-import 'package:stints/widgets/text_widgets.dart';
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

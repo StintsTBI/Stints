@@ -11,9 +11,8 @@ class SignINstate extends State<SignIn> {
   bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       backgroundColor: WidgetColors.primaryColor,
       body: Stack(
         children: <Widget>[

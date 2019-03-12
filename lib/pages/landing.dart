@@ -1,11 +1,10 @@
 //https://drive.google.com/open?id=1FwiUFmW9gZYKsx0Lno0h9h3OtzDbdigi
 
 import 'package:flutter/material.dart';
+import 'package:stints/pages/profile.dart';
 import 'package:stints/pages/signin.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:stints/assets/constants.dart';
-import 'package:wave/wave.dart';
-import 'package:wave/config.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -19,6 +18,7 @@ class LandingPageState extends State<LandingPage> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -30,7 +30,10 @@ class LandingPageState extends State<LandingPage> {
                 "Skip",
                 color: WidgetColors.black,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (c) => Profile()));
+              },
             ),
           )
         ],
