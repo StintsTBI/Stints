@@ -48,26 +48,34 @@ class LandingPageState extends State<LandingPage> {
           SizedBox(
             height: 60,
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 50, left: (width - 241) / 2),
-            child: RaisedButton(
-              color: Colors.white,
-              splashColor: WidgetColors.primaryColor,
-              elevation: 0.0,
-              child: Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: WidgetColors.primaryColor),
-                      borderRadius: BorderRadius.circular(22)),
-                  height: 45,
-                  width: 180,
-                  child: Center(child: SmallText("Login"))),
-              onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (c) => SignIN()));
-              },
+          Center(
+            child: Container(
+              height: 45,
+              width: 180,
+              child: RaisedButton(
+                color: Colors.white,
+                shape: StadiumBorder(),
+                child: SmallText("Login", color: WidgetColors.primaryColor),
+                onPressed: () {},
+              ),
             ),
           ),
-          Padding(
+          SizedBox(
+            height: 20,
+          ),
+          Center(
+            child: Container(
+              height: 45,
+              width: 180,
+              child: RaisedButton(
+                color: WidgetColors.primaryColor,
+                shape: StadiumBorder(),
+                child: SmallText("Signup", color: Colors.white),
+                onPressed: () {},
+              ),
+            ),
+          ),
+          /* Padding(
             padding: EdgeInsets.only(top: 30, left: (width - 241) / 2),
             child: RaisedButton(
               color: Colors.white,
@@ -81,7 +89,7 @@ class LandingPageState extends State<LandingPage> {
                   child: Center(child: SmallText("Signup"))),
               onPressed: () {},
             ),
-          ),
+          ), */
         ],
       ),
     );
