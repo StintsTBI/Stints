@@ -75,21 +75,6 @@ class LandingPageState extends State<LandingPage> {
               ),
             ),
           ),
-          /* Padding(
-            padding: EdgeInsets.only(top: 30, left: (width - 241) / 2),
-            child: RaisedButton(
-              color: Colors.white,
-              elevation: 0.0,
-              child: Container(
-                  height: 45,
-                  width: 180,
-                  decoration: BoxDecoration(
-                      color: WidgetColors.primaryColor,
-                      borderRadius: BorderRadius.circular(22)),
-                  child: Center(child: SmallText("Signup"))),
-              onPressed: () {},
-            ),
-          ), */
         ],
       ),
     );
