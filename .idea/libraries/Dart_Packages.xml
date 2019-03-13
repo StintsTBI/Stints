@@ -149,6 +149,13 @@
             </list>
           </value>
         </entry>
+        <entry key="wave">
+          <value>
+            <list>
+              <option value="C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/wave-0.0.8/lib" />
+            </list>
+          </value>
+        </entry>
       </option>
     </properties>
     <CLASSES>
@@ -170,6 +177,7 @@
       <root url="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.2/lib" />
       <root url="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.1.6/lib" />
       <root url="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.0.8/lib" />
+      <root url="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/wave-0.0.8/lib" />
       <root url="file://C:/flutter/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://C:/flutter/flutter/packages/flutter/lib" />
       <root url="file://C:/flutter/flutter/packages/flutter_test/lib" />

@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
+  auto_size_text: ^1.0.0
   wave: ^0.0.8
   flutter_test:
     sdk: flutter
