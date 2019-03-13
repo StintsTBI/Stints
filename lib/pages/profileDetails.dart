@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stints/assets/constants.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:stints/pages/profileEdit.dart';
 import 'package:stints/widgets/text_widgets.dart';
 
 class ProfileDetails extends StatefulWidget {
@@ -9,6 +10,20 @@ class ProfileDetails extends StatefulWidget {
 }
 
 class _ProfileDetailsState extends State<ProfileDetails> {
+  Widget bookmark() {
+    return Padding(
+      padding: EdgeInsets.only(top: 30, right: 10, left: 10),
+      child: Container(
+        height: 150,
+        width: 150,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
   String bio =
       "However, it's not exactly a personal bio because it doesn't tell your full or life story. And no, your resume or CV should not incorporate your personal bio in full into it.";
   @override
@@ -19,9 +34,59 @@ class _ProfileDetailsState extends State<ProfileDetails> {
           Positioned(
             top: 54,
             right: 54,
-            child: SmallText(
-              "Edit",
-              color: WidgetColors.primaryColor,
+            child: GestureDetector(
+              child: SmallText(
+                "Edit",
+                color: WidgetColors.primaryColor,
+              ),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (c) => ProfileEdit()));
+              },
+            ),
+          ),
+          Positioned(
+            bottom: 10,
+            left: 10,
+            right: 10,
+            child: Container(
+              decoration: BoxDecoration(
+                color: WidgetColors.primaryColor,
+              ),
+              height: 300,
+              padding: EdgeInsets.only(top: 80),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      SmallText(
+                        "Your Bookmarks",
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      GestureDetector(
+                        child: SmallText(
+                          "Next >>",
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  ),
+                  SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: <Widget>[
+                          bookmark(),
+                          bookmark(),
+                          bookmark(),
+                          bookmark()
+                        ],
+                      ))
+                ],
+              ),
             ),
           ),
           Padding(
@@ -47,7 +112,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                   child: NormalText("Ashwin Ram"),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 27, right: 27),
@@ -60,7 +125,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -71,33 +136,76 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                   ],
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 40,
                 ),
                 Container(
                   decoration: BoxDecoration(
+                      boxShadow: [
+                        new BoxShadow(
+                            color: WidgetColors.black,
+                            offset: Offset(0, 4),
+                            blurRadius: 4),
+                      ],
                       color: Color(0xffF4F4F4),
                       border: Border.all(
                           color: WidgetColors.primaryColor, width: 2),
                       borderRadius: BorderRadius.circular(20)),
-                  height: 80,
-                  width: 240,
+                  height: 100,
+                  width: 250,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[],
+                    children: <Widget>[
+                      Container(
+                        height: 30,
+                        width: 10,
+                        child: Icon(
+                          Icons.verified_user,
+                          size: 30,
+                        ),
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(top: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  "Complete Verification  ",
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.green),
+                                ),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: Text(
+                                    "1 step left>>",
+                                    style: TextStyle(
+                                        fontSize: 8,
+                                        color: WidgetColors.primaryColor),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 2,
+                          ),
+                          Container(
+                            width: 180,
+                            child: AutoSizeText(
+                                "complete user profile to get more access and unlimited use",
+                                maxLines: 3,
+                                style: TextStyle(fontSize: 10)),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                 )
               ],
             ),
           ),
-          /* Positioned(
-            bottom: 10,
-            left: 10,
-            right: 10,
-            child: Container(
-              height: 350,
-              color: Color(0xffFF9D74),
-            ),
-          ) */
+          /*  */
         ],
       ),
     );
