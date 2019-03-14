@@ -25,7 +25,12 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
+  firebase_database: 1.0.5
+  firebase_messaging: 2.1.0
   auto_size_text: ^1.0.0
+  flutter_local_notifications: ^0.4.1
+  image_picker: 0.4.12+1
+  firebase_storage: 1.0.4
   wave: ^0.0.8
   flutter_test:
     sdk: flutter
