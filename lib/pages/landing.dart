@@ -84,8 +84,10 @@ class LandingPageState extends State<LandingPage> {
                   height: 70,
                   width: 241,
                   decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("images/SastaTBI.png"))),
+                    image: DecorationImage(
+                      image: AssetImage("images/sastaTBI.png"),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(
