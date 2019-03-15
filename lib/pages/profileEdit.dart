@@ -1,14 +1,31 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:stints/assets/constants.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:stints/widgets/text_widgets.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfileEdit extends StatefulWidget {
   @override
   _ProfileEditState createState() => _ProfileEditState();
 }
 
+File image;
+String filename;
+
 class _ProfileEditState extends State<ProfileEdit> {
+  Future _getimage() async {
+    var selectedimage =
+        await ImagePicker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      image = selectedimage;
+      filename = basename(image.path);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,21 +45,26 @@ class _ProfileEditState extends State<ProfileEdit> {
               Column(
                 children: <Widget>[
                   Center(
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 20),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              new BoxShadow(
-                                  color: WidgetColors.black,
-                                  offset: Offset(0, 4),
-                                  blurRadius: 4),
-                            ],
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(40)),
+                    child: GestureDetector(
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              boxShadow: [
+                                new BoxShadow(
+                                    color: WidgetColors.black,
+                                    offset: Offset(0, 4),
+                                    blurRadius: 4),
+                              ],
+                              image: image == null ? Colors.yellow : Image.file(image,),
+                             borderRadius: BorderRadius.circular(40)),
+                        ),
                       ),
+                      onTap: () {
+                        _getimage();
+                      },
                     ),
                   ),
                   SizedBox(
