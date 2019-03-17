@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:stints/pages/home.dart';
 import 'package:stints/pages/landing.dart';
-import 'package:stints/pages/profileEdit.dart';
-
 import 'package:stints/services/authentication.dart';
+
+class MyInheritedWidget extends InheritedWidget {
+  final VoidCallback _onSignedOut;
+  MyInheritedWidget(this._onSignedOut, child) : super();
+  static InheritedWidget of(BuildContext context) =>
+      context.inheritFromWidgetOfExactType(InheritedWidget);
+  @override
+  bool updateShouldNotify(InheritedWidget oldWidget) {
+    return false;
+  }
+}
 
 class RootPage extends StatefulWidget {
   RootPage({this.auth});
@@ -21,6 +30,13 @@ enum AuthStatus {
 }
 
 class _RootPageState extends State<RootPage> {
+  void _onSignedOut() {
+    setState(() {
+      authStatus = AuthStatus.NOT_LOGGED_IN;
+      _userId = "";
+    });
+  }
+
   AuthStatus authStatus = AuthStatus.NOT_DETERMINED;
   String _userId = "";
   int t = 0;
@@ -49,13 +65,6 @@ class _RootPageState extends State<RootPage> {
       });
     });
     Navigator.pop(context);
-  }
-
-  void _onSignedOut() {
-    setState(() {
-      authStatus = AuthStatus.NOT_LOGGED_IN;
-      _userId = "";
-    });
   }
 
   Widget _buildWaitingScreen() {

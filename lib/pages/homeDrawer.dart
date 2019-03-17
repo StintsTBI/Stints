@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:stints/assets/constants.dart';
+import 'package:stints/pages/RootPage.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class HomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //final myInheritedWidget = MyInheritedWidget.of(context);
+    //VoidCallback signout = myInheritedWidget.of(context)._onSignedOut;
     return Container(
       color: Color(0xffEE4801).withOpacity(1),
       child: Column(
