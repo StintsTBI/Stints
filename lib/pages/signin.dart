@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:stints/services/authentication.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:stints/assets/constants.dart';
 
 class SignIn extends StatefulWidget {
+  final BaseAuth auth;
+  final VoidCallback onSignedIn;
+  SignIn({this.auth, this.onSignedIn});
   @override
   SignINstate createState() => SignINstate();
 }
 
 class SignINstate extends State<SignIn> {
+  String _email, _password;
+  String userId = "";
+
   bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
+    void sigin() async {
+      //if (user.isEmailVerified) {
+      print("ture");
+      String userId = await widget.auth.signIn(_email, _password);
+      widget.onSignedIn();
+      // }
+
+      print("user:" + userId);
+    }
+
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       backgroundColor: WidgetColors.primaryColor,
@@ -71,6 +88,7 @@ class SignINstate extends State<SignIn> {
                           color: Colors.white,
                         ),
                       ),
+                      onChanged: (value) => _email = value,
                     ),
                   ),
                   SizedBox(
@@ -110,6 +128,7 @@ class SignINstate extends State<SignIn> {
                               color: Colors.black,
                             ),
                           )),
+                      onChanged: (value) => _password = value,
                     ),
                   ),
                   SizedBox(
@@ -148,7 +167,9 @@ class SignINstate extends State<SignIn> {
                         shape: StadiumBorder(),
                         child: SmallText("Login",
                             color: WidgetColors.primaryColor),
-                        onPressed: () {},
+                        onPressed: () {
+                          sigin();
+                        },
                       ),
                     ),
                   ),

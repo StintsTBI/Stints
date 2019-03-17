@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-const BoxShadow boxShadow =BoxShadow(color:WidgetColors.black,offset: Offset(0, 4),blurRadius: 4);
+const BoxShadow boxShadow =
+    BoxShadow(color: WidgetColors.black, offset: Offset(0, 4), blurRadius: 4);
+
 class WidgetColors {
   static const Color primaryColor = const Color(0xFFFF4C00);
   static const Color primaryDark = const Color(0xFFDB4100);

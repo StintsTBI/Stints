@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:stints/assets/constants.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -58,8 +58,12 @@ class _ProfileEditState extends State<ProfileEdit> {
                                     offset: Offset(0, 4),
                                     blurRadius: 4),
                               ],
-                              image: image == null ? Colors.yellow : Image.file(image,),
-                             borderRadius: BorderRadius.circular(40)),
+                              /* image: image == null
+                                  ? Colors.yellow
+                                  : Image.file(
+                                      image,
+                                    ), */
+                              borderRadius: BorderRadius.circular(40)),
                         ),
                       ),
                       onTap: () {

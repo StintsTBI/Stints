@@ -1,12 +1,17 @@
 //https://drive.google.com/open?id=1FwiUFmW9gZYKsx0Lno0h9h3OtzDbdigi
 
 import 'package:flutter/material.dart';
+import 'package:stints/pages/SignUp.dart';
 import 'package:stints/pages/profile.dart';
 import 'package:stints/pages/signin.dart';
+import 'package:stints/services/authentication.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:stints/assets/constants.dart';
 
 class LandingPage extends StatefulWidget {
+  LandingPage({this.auth, this.onSignedIn});
+  final BaseAuth auth;
+  final VoidCallback onSignedIn;
   @override
   LandingPageState createState() => LandingPageState();
 }
@@ -83,11 +88,11 @@ class LandingPageState extends State<LandingPage> {
                 child: Container(
                   height: 70,
                   width: 241,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
+                  /* decoration: BoxDecoration(
+                      /*  image: DecorationImage(
                       image: AssetImage("images/sastaTBI.png"),
-                    ),
-                  ),
+                    ), */
+                      ), */
                 ),
               ),
               SizedBox(
@@ -102,8 +107,11 @@ class LandingPageState extends State<LandingPage> {
                     shape: StadiumBorder(),
                     child: SmallText("Login", color: WidgetColors.primaryColor),
                     onPressed: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (c) => SignIn()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (c) => SignIn(
+                                auth: widget.auth,
+                                onSignedIn: widget.onSignedIn,
+                              )));
                     },
                   ),
                 ),
@@ -119,7 +127,13 @@ class LandingPageState extends State<LandingPage> {
                     color: WidgetColors.primaryColor,
                     shape: StadiumBorder(),
                     child: SmallText("Signup", color: Colors.white),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (c) => SignUp(
+                                auth: widget.auth,
+                                onSignedIn: widget.onSignedIn,
+                              )));
+                    },
                   ),
                 ),
               ),

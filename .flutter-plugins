@@ -1,6 +1,8 @@
-firebase_core=/home/zeshan/Desktop/Zesh/flutter_linux_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.5+1/
-firebase_database=/home/zeshan/Desktop/Zesh/flutter_linux_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-1.0.5/
-firebase_messaging=/home/zeshan/Desktop/Zesh/flutter_linux_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging-2.1.0/
-firebase_storage=/home/zeshan/Desktop/Zesh/flutter_linux_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-1.0.4/
-flutter_local_notifications=/home/zeshan/Desktop/Zesh/flutter_linux_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-0.4.5/
-image_picker=/home/zeshan/Desktop/Zesh/flutter_linux_v1.2.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.4.12+1/
+firebase_auth=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth-0.7.0\\
+firebase_core=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core-0.2.5+1\\
+firebase_database=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_database-1.0.5\\
+firebase_messaging=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_messaging-2.1.0\\
+firebase_storage=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_storage-1.0.4\\
+flutter_local_notifications=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_local_notifications-0.4.5\\
+google_sign_in=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_sign_in-3.2.4\\
+image_picker=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\image_picker-0.4.12+1\\
