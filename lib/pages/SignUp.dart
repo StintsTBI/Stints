@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stints/services/authentication.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:stints/assets/constants.dart';
+import 'authZesh.dart';
 
 class SignUp extends StatefulWidget {
   final BaseAuth auth;
@@ -173,7 +174,7 @@ class SignUpstate extends State<SignUp> {
                         shape: StadiumBorder(),
                         child: SmallText("SignUp",
                             color: WidgetColors.primaryColor),
-                        onPressed: _validateAndSubmit,
+                        onPressed: handleSignIn,
                       ),
                     ),
                   ),

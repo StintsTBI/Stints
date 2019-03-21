@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stints/services/authentication.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:stints/assets/constants.dart';
+import 'authZesh.dart';
 
 class SignIn extends StatefulWidget {
   final BaseAuth auth;
@@ -19,11 +20,11 @@ class SignINstate extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     void sigin() async {
-      //if (user.isEmailVerified) {
-      print("ture");
-      String userId = await widget.auth.signIn(_email, _password);
-      widget.onSignedIn();
-      // }
+      if (user.isEmailVerified) {
+        print("ture");
+        String userId = await widget.auth.signIn(_email, _password);
+        widget.onSignedIn();
+      }
 
       print("user:" + userId);
     }
@@ -168,7 +169,7 @@ class SignINstate extends State<SignIn> {
                         child: SmallText("Login",
                             color: WidgetColors.primaryColor),
                         onPressed: () {
-                          sigin();
+                          handleSignIn();
                         },
                       ),
                     ),

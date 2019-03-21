@@ -4,6 +4,14 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.7.0/android/firebase_auth.iml" filepath="C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.7.0/android/firebase_auth.iml" />
+      <module fileurl="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.5+1/android/firebase_core.iml" filepath="C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.5+1/android/firebase_core.iml" />
+      <module fileurl="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-1.0.5/android/firebase_database.iml" filepath="C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-1.0.5/android/firebase_database.iml" />
+      <module fileurl="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging-2.1.0/android/firebase_messaging.iml" filepath="C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging-2.1.0/android/firebase_messaging.iml" />
+      <module fileurl="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-1.0.4/android/firebase_storage.iml" filepath="C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-1.0.4/android/firebase_storage.iml" />
+      <module fileurl="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-0.4.5/android/flutter_local_notifications.iml" filepath="C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-0.4.5/android/flutter_local_notifications.iml" />
+      <module fileurl="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.2.4/android/google_sign_in.iml" filepath="C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.2.4/android/google_sign_in.iml" />
+      <module fileurl="file://C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.4.12+1/android/image_picker.iml" filepath="C:/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.4.12+1/android/image_picker.iml" />
     </modules>
   </component>
 </project>

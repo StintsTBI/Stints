@@ -84,15 +84,14 @@ class LandingPageState extends State<LandingPage> {
           Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 50, left: (width - 241) / 2),
-                child: Container(
-                  height: 70,
-                  width: 241,
-                  /* decoration: BoxDecoration(
-                      /*  image: DecorationImage(
-                      image: AssetImage("images/sastaTBI.png"),
-                    ), */
-                      ), */
+                padding: EdgeInsets.only(top: 100),
+                child: Center(
+                  child: Container(
+                    height: 70,
+                    width: 241,
+                    child: Image.network(
+                        "http://www.sastratbi.in/wp-content/uploads/2018/11/cropped-FIRSTTBILogo-e1542947871773.png"),
+                  ),
                 ),
               ),
               SizedBox(
@@ -102,10 +101,11 @@ class LandingPageState extends State<LandingPage> {
                 child: Container(
                   height: 45,
                   width: 180,
-                  child: RaisedButton(
+                  child: OutlineButton(
+                    borderSide: BorderSide(color: WidgetColors.primaryColor),
                     color: Colors.white,
                     shape: StadiumBorder(),
-                    child: SmallText("Login", color: WidgetColors.primaryColor),
+                    child: SmallText("Login", color: WidgetColors.black),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (c) => SignIn(

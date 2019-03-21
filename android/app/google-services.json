@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "392262726361-akfnlngoqk608ts9v4tt6kmujj8tu9j7.apps.googleusercontent.com",
+          "client_id": "392262726361-jmhfnupeeaakhun4rs152vf72mb9qh3c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.stints",
-            "certificate_hash": "96a13a653e076687d4a70c23b388988e45608dba"
+            "certificate_hash": "a59df2565d2f7b0df60f05547a75270dc3f291ef"
           }
         },
         {
@@ -42,6 +42,13 @@
             {
               "client_id": "392262726361-8po4o3ujmk69vlgauj8v3924h28vcusc.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "392262726361-d719cf8hj2m9tkkmht811fa9lh14gg0p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.stints"
+              }
             }
           ]
         },

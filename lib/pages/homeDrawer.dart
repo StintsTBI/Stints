@@ -92,16 +92,14 @@ class HomeDrawer extends StatelessWidget {
                   height: 20,
                 ),
                 GestureDetector(
-                  child: Center(
-                    child: Container(
-                      padding: EdgeInsets.only(left: 18, top: 14),
-                      color: WidgetColors.primaryDark,
-                      height: 47,
-                      width: double.infinity,
-                      child: SmallText(
-                        "Home",
-                        color: Colors.white,
-                      ),
+                  child: Container(
+                    padding: EdgeInsets.only(left: 18, top: 14),
+                    color: WidgetColors.primaryDark,
+                    height: 47,
+                    width: double.infinity,
+                    child: SmallText(
+                      "Home",
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -109,16 +107,14 @@ class HomeDrawer extends StatelessWidget {
                   height: 20,
                 ),
                 GestureDetector(
-                  child: Center(
-                    child: Container(
-                      padding: EdgeInsets.only(left: 18, top: 14),
-                      color: WidgetColors.primaryDark,
-                      height: 47,
-                      width: double.infinity,
-                      child: SmallText(
-                        "Bookmarks",
-                        color: Colors.white,
-                      ),
+                  child: Container(
+                    padding: EdgeInsets.only(left: 18, top: 14),
+                    color: WidgetColors.primaryDark,
+                    height: 47,
+                    width: double.infinity,
+                    child: SmallText(
+                      "Bookmarks",
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -126,16 +122,14 @@ class HomeDrawer extends StatelessWidget {
                   height: 20,
                 ),
                 GestureDetector(
-                  child: Center(
-                    child: Container(
-                      padding: EdgeInsets.only(left: 18, top: 14),
-                      color: WidgetColors.primaryDark,
-                      height: 47,
-                      width: double.infinity,
-                      child: SmallText(
-                        "Settings",
-                        color: Colors.white,
-                      ),
+                  child: Container(
+                    padding: EdgeInsets.only(left: 18, top: 14),
+                    color: WidgetColors.primaryDark,
+                    height: 47,
+                    width: double.infinity,
+                    child: SmallText(
+                      "Settings",
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -143,16 +137,14 @@ class HomeDrawer extends StatelessWidget {
                   height: 20,
                 ),
                 GestureDetector(
-                  child: Center(
-                    child: Container(
-                      padding: EdgeInsets.only(left: 18, top: 14),
-                      color: WidgetColors.primaryDark,
-                      height: 47,
-                      width: double.infinity,
-                      child: SmallText(
-                        "Contact us",
-                        color: Colors.white,
-                      ),
+                  child: Container(
+                    padding: EdgeInsets.only(left: 18, top: 14),
+                    color: WidgetColors.primaryDark,
+                    height: 47,
+                    width: double.infinity,
+                    child: SmallText(
+                      "Contact us",
+                      color: Colors.white,
                     ),
                   ),
                 ),
@@ -160,16 +152,14 @@ class HomeDrawer extends StatelessWidget {
                   height: 20,
                 ),
                 GestureDetector(
-                  child: Center(
-                    child: Container(
-                      padding: EdgeInsets.only(left: 18, top: 14),
-                      color: WidgetColors.primaryDark,
-                      height: 47,
-                      width: double.infinity,
-                      child: SmallText(
-                        "About",
-                        color: Colors.white,
-                      ),
+                  child: Container(
+                    padding: EdgeInsets.only(left: 18, top: 14),
+                    color: WidgetColors.primaryDark,
+                    height: 47,
+                    width: double.infinity,
+                    child: SmallText(
+                      "About",
+                      color: Colors.white,
                     ),
                   ),
                 ),
