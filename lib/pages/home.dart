@@ -17,10 +17,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           elevation: 0.0,
         ),
-        drawer: Container(
-          width: 251,
-          child: HomeDrawer(),
-        ),
+        drawer: HomeDrawer(),
         body: Container(
           height: MediaQuery.of(context).size.height,
           width: double.infinity,
