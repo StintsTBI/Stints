@@ -105,6 +105,7 @@ class LandingPageState extends State<LandingPage> {
                     borderSide: BorderSide(color: WidgetColors.primaryColor),
                     color: Colors.white,
                     shape: StadiumBorder(),
+                    splashColor: WidgetColors.primaryColor,
                     child: SmallText("Login", color: WidgetColors.black),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
