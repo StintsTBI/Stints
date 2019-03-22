@@ -7,6 +7,7 @@ import 'package:stints/pages/signin.dart';
 import 'package:stints/services/authentication.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:stints/assets/constants.dart';
+import 'home.dart';
 
 class LandingPage extends StatefulWidget {
   LandingPage({this.auth, this.onSignedIn});
@@ -36,7 +37,7 @@ class LandingPageState extends State<LandingPage> {
               ),
               onTap: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (c) => Profile()));
+                    .push(MaterialPageRoute(builder: (c) => HomePage()));
               },
             ),
           )
