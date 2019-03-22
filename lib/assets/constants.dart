@@ -23,7 +23,7 @@ class Dimensions {
 }
 
 class TextSize {
-  static const double small = 18.0;
+  static const double small = 14;
   static const double medium = 24.0;
   static const double large = 32.0;
   static const double extraLarge = 48.0;

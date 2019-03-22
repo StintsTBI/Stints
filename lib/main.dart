@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stints/pages/RootPage.dart';
 import 'package:stints/services/authentication.dart';
 import 'package:stints/assets/constants.dart';
+import 'package:stints/pages/home.dart';
 
 void main() => runApp(new MyApp());
 
@@ -14,9 +15,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-        theme: ThemeData(primaryColor: WidgetColors.primaryColor),
-        debugShowCheckedModeBanner: false,
-        home: new RootPage(auth: new Auth()));
+      theme: ThemeData(primaryColor: WidgetColors.primaryColor),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        "/": (_) => HomePage(),
+      },
+    );
+    // home: new RootPage(auth: new Auth()));
   }
   /* String _email = "ramashwin36@gmail.com", _password = "Tanjore613004";
 
