@@ -158,7 +158,7 @@ class SignUpstate extends State<SignUp> {
                             Icon(Icons.home)
                           ],
                         ),
-                        onPressed: () {},
+                        onPressed: handleSignIn,
                       ),
                     ),
                   ),
@@ -174,7 +174,7 @@ class SignUpstate extends State<SignUp> {
                         shape: StadiumBorder(),
                         child: SmallText("SignUp",
                             color: WidgetColors.primaryColor),
-                        onPressed: handleSignIn,
+                        onPressed: _validateAndSubmit,
                       ),
                     ),
                   ),
