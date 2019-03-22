@@ -31,7 +31,34 @@ class _ProfileDetailsState extends State<ProfileDetails> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          Positioned(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(top: 36),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+              GestureDetector(
+                child: Padding(
+                  padding: EdgeInsets.only(right: 18, top: 36),
+                  child: NormalText("Edit", color: WidgetColors.primaryColor),
+                ),
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (c) => ProfileEdit()));
+                },
+              ),
+            ],
+          ),
+          /* Positioned(
             top: 54,
             right: 54,
             child: GestureDetector(
@@ -44,7 +71,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                     .push(MaterialPageRoute(builder: (c) => ProfileEdit()));
               },
             ),
-          ),
+          ), */
           Positioned(
             bottom: 10,
             left: 10,

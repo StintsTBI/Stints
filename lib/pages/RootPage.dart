@@ -30,6 +30,24 @@ enum AuthStatus {
 }
 
 class _RootPageState extends State<RootPage> {
+  String _userId = "";
+
+  void _onLoggedIn() {
+    widget.auth.getCurrentUser().then((user) {
+      setState(() {
+        _userId = user.uid.toString();
+        print(_userId);
+        if (_userId != null || _userId != '') {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (c) => HomePage(signout: _onSignedOut)));
+        }
+      });
+    });
+    setState(() {
+      authStatus = AuthStatus.LOGGED_IN;
+    });
+  }
+
   void _onSignedOut() {
     setState(() {
       authStatus = AuthStatus.NOT_LOGGED_IN;
@@ -38,8 +56,6 @@ class _RootPageState extends State<RootPage> {
   }
 
   AuthStatus authStatus = AuthStatus.NOT_DETERMINED;
-  String _userId = "";
-  int t = 0;
 
   @override
   void initState() {
@@ -53,18 +69,6 @@ class _RootPageState extends State<RootPage> {
             user?.uid == null ? AuthStatus.NOT_LOGGED_IN : AuthStatus.LOGGED_IN;
       });
     });
-  }
-
-  void _onLoggedIn() {
-    setState(() {
-      authStatus = AuthStatus.LOGGED_IN;
-    });
-    widget.auth.getCurrentUser().then((user) {
-      setState(() {
-        _userId = user.uid.toString();
-      });
-    });
-    Navigator.pop(context);
   }
 
   Widget _buildWaitingScreen() {
@@ -92,7 +96,7 @@ class _RootPageState extends State<RootPage> {
         );
         break;
       case AuthStatus.LOGGED_IN:
-        return HomePage();
+        return HomePage(signout: _onSignedOut);
         break;
       default:
         return _buildWaitingScreen();

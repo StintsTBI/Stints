@@ -35,12 +35,26 @@ class _ProfileEditState extends State<ProfileEdit> {
         children: <Widget>[
           Column(
             children: <Widget>[
-              Align(
-                alignment: Alignment.topRight,
-                child: Padding(
-                  padding: EdgeInsets.only(right: 27, top: 27),
-                  child: NormalText("Save", color: Colors.white),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 18),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 18, top: 18),
+                    child: NormalText("Save", color: Colors.white),
+                  ),
+                ],
               ),
               Column(
                 children: <Widget>[

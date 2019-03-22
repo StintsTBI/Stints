@@ -3,11 +3,13 @@ import 'dart:async';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final GoogleSignIn _googleSignIn = GoogleSignIn();
 final FirebaseAuth _auth = FirebaseAuth.instance;
 DatabaseReference databaseReference;
 FirebaseUser user;
+SharedPreferences prefs;
 
 Future<FirebaseUser> handleSignIn() async {
   final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
@@ -21,6 +23,9 @@ Future<FirebaseUser> handleSignIn() async {
 
   user = await _auth.signInWithCredential(credential);
   print("signed in " + user.displayName);
+  prefs = await SharedPreferences.getInstance();
+  prefs.setString("uid", user.uid);
+  prefs.setString("SigninType", "GoogleSignin");
 
   Function checkUser = (DataSnapshot d) {
     // print("Checking user.....");

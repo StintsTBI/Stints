@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stints/services/authentication.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:stints/assets/constants.dart';
-import 'authZesh.dart';
+import 'auth.dart';
 
 class SignUp extends StatefulWidget {
   final BaseAuth auth;
@@ -17,19 +17,11 @@ class SignUpstate extends State<SignUp> {
   String _email, _password;
   void _validateAndSubmit() async {
     String userId = "";
-
-    /*  FirebaseUser user = await _firebaseAuth
-          .createUserWithEmailAndPassword(email: _email, password: _password)
-          .then((FirebaseUser user) {
-        user.sendEmailVerification();
-      }); */
     userId = await widget.auth.signUp(_email, _password);
     widget.auth.sendEmailVerification();
     if (userId.length > 0 && userId != null) {
       widget.onSignedIn();
     }
-
-    //userId = user.uid;
   }
 
   bool _obscureText = true;

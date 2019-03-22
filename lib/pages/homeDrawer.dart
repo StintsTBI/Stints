@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:stints/assets/constants.dart';
-import 'package:stints/pages/RootPage.dart';
+import 'package:stints/pages/profileDetails.dart';
+import 'package:stints/pages/profileEdit.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class HomeDrawer extends StatelessWidget {
+  final VoidCallback signout;
+  HomeDrawer({this.signout});
   @override
   Widget build(BuildContext context) {
-    //final myInheritedWidget = MyInheritedWidget.of(context);
-    //VoidCallback signout = myInheritedWidget.of(context)._onSignedOut;
     return Drawer(
       child: Container(
         color: Color(0xffEE4801).withOpacity(1),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-          //crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Column(
               children: <Widget>[
@@ -37,18 +36,50 @@ class HomeDrawer extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       GestureDetector(
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              color: Colors.yellow,
-                              boxShadow: [
-                                new BoxShadow(
-                                    color: WidgetColors.black,
-                                    offset: Offset(0, 4),
-                                    blurRadius: 4),
-                              ],
-                              borderRadius: BorderRadius.circular(40)),
+                        child: GestureDetector(
+                          child: Stack(
+                            children: <Widget>[
+                              GestureDetector(
+                                child: Container(
+                                  height: 80,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      color: Colors.yellow,
+                                      boxShadow: [
+                                        new BoxShadow(
+                                            color: WidgetColors.black,
+                                            offset: Offset(0, 4),
+                                            blurRadius: 4),
+                                      ],
+                                      borderRadius: BorderRadius.circular(40)),
+                                ),
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (c) => ProfileDetails()));
+                                },
+                              ),
+                              Positioned(
+                                height: 20,
+                                width: 20,
+                                bottom: 0,
+                                right: 0,
+                                child: GestureDetector(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Icon(Icons.edit, size: 14),
+                                  ),
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (c) => ProfileEdit()));
+                                  },
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                         onTap: () {},
                       ),
@@ -224,9 +255,7 @@ class HomeDrawer extends StatelessWidget {
                                     "SIGN OUT",
                                     style: TextStyle(color: Colors.white),
                                   ),
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
+                                  onPressed: signout,
                                 ),
                               ],
                             );
