@@ -16,10 +16,22 @@ class Profile extends StatelessWidget {
           ClipPath(
             child: Container(
               child: Column(
-                //mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(left: 18, top: 18),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: IconButton(
+                        color: Colors.white,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: Icon(Icons.arrow_back_ios),
+                      ),
+                    ),
+                  ),
                   SizedBox(
-                    height: 150,
+                    height: 50,
                   ),
                   Container(
                     height: 80,
@@ -64,183 +76,190 @@ class Profile extends StatelessWidget {
             ),
             clipper: BottomWaveClipper(),
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 390),
-            child: Column(
-              children: <Widget>[
-                Container(
-                    height: heightcon,
-                    width: double.infinity,
-                    color: Color(0xffFFC107),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          getRow("My Profile",
-                              Icon(Icons.account_circle, color: Colors.white)),
-                          GestureDetector(
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 15),
-                              child: Container(
-                                child: Center(
-                                    child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 15,
-                                  color: Colors.white,
-                                )),
-                                height: 34,
-                                width: 34,
-                                decoration: BoxDecoration(
-                                  color: WidgetColors.primaryColor,
-                                  borderRadius: BorderRadius.circular(17),
+          ListView(
+            scrollDirection: Axis.vertical,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(top: 390),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                        height: heightcon,
+                        width: double.infinity,
+                        color: Color(0xffFFC107),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              getRow(
+                                  "My Profile",
+                                  Icon(Icons.account_circle,
+                                      color: Colors.white)),
+                              GestureDetector(
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: 15),
+                                  child: Container(
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 15,
+                                      color: Colors.white,
+                                    )),
+                                    height: 34,
+                                    width: 34,
+                                    decoration: BoxDecoration(
+                                      color: WidgetColors.primaryColor,
+                                      borderRadius: BorderRadius.circular(17),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (c) => ProfileDetails()));
-                            },
-                          )
-                        ])),
-                Container(
-                    height: heightcon,
-                    width: double.infinity,
-                    color: Color(0xffffca28),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          getRow(
-                              "Accademic details",
-                              Icon(Icons.insert_drive_file,
-                                  color: Colors.white)),
-                          GestureDetector(
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 15),
-                              child: Container(
-                                child: Center(
-                                    child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 15,
-                                  color: Colors.white,
-                                )),
-                                height: 34,
-                                width: 34,
-                                decoration: BoxDecoration(
-                                  color: WidgetColors.primaryColor,
-                                  borderRadius: BorderRadius.circular(17),
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (c) => ProfileDetails()));
+                                },
+                              )
+                            ])),
+                    Container(
+                        height: heightcon,
+                        width: double.infinity,
+                        color: Color(0xffffca28),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              getRow(
+                                  "Accademic details",
+                                  Icon(Icons.insert_drive_file,
+                                      color: Colors.white)),
+                              GestureDetector(
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: 15),
+                                  child: Container(
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 15,
+                                      color: Colors.white,
+                                    )),
+                                    height: 34,
+                                    width: 34,
+                                    decoration: BoxDecoration(
+                                      color: WidgetColors.primaryColor,
+                                      borderRadius: BorderRadius.circular(17),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (c) => LandingPage()));
-                            },
-                          )
-                        ])),
-                Container(
-                    height: heightcon,
-                    width: double.infinity,
-                    color: Color(0xffFFD54F),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          getRow("Area of interest",
-                              Icon(Icons.dashboard, color: Colors.white)),
-                          GestureDetector(
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 15),
-                              child: Container(
-                                child: Center(
-                                    child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 15,
-                                  color: Colors.white,
-                                )),
-                                height: 34,
-                                width: 34,
-                                decoration: BoxDecoration(
-                                  color: WidgetColors.primaryColor,
-                                  borderRadius: BorderRadius.circular(17),
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (c) => LandingPage()));
+                                },
+                              )
+                            ])),
+                    Container(
+                        height: heightcon,
+                        width: double.infinity,
+                        color: Color(0xffFFD54F),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              getRow("Area of interest",
+                                  Icon(Icons.dashboard, color: Colors.white)),
+                              GestureDetector(
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: 15),
+                                  child: Container(
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 15,
+                                      color: Colors.white,
+                                    )),
+                                    height: 34,
+                                    width: 34,
+                                    decoration: BoxDecoration(
+                                      color: WidgetColors.primaryColor,
+                                      borderRadius: BorderRadius.circular(17),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (c) => LandingPage()));
-                            },
-                          )
-                        ])),
-                Container(
-                    height: heightcon,
-                    width: double.infinity,
-                    color: Color(0xffFFE082),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          getRow("Settings",
-                              Icon(Icons.settings, color: Colors.white)),
-                          GestureDetector(
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 15),
-                              child: Container(
-                                child: Center(
-                                    child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 15,
-                                  color: Colors.white,
-                                )),
-                                height: 34,
-                                width: 34,
-                                decoration: BoxDecoration(
-                                  color: WidgetColors.primaryColor,
-                                  borderRadius: BorderRadius.circular(17),
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (c) => LandingPage()));
+                                },
+                              )
+                            ])),
+                    Container(
+                        height: heightcon,
+                        width: double.infinity,
+                        color: Color(0xffFFE082),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              getRow("Settings",
+                                  Icon(Icons.settings, color: Colors.white)),
+                              GestureDetector(
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: 15),
+                                  child: Container(
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 15,
+                                      color: Colors.white,
+                                    )),
+                                    height: 34,
+                                    width: 34,
+                                    decoration: BoxDecoration(
+                                      color: WidgetColors.primaryColor,
+                                      borderRadius: BorderRadius.circular(17),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (c) => LandingPage()));
-                            },
-                          )
-                        ])),
-                Container(
-                    height: heightcon,
-                    width: double.infinity,
-                    color: Color(0xffFFECB3),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          getRow(
-                              "Others",
-                              Icon(
-                                Icons.info,
-                                color: Colors.white,
-                              )),
-                          GestureDetector(
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 15),
-                              child: Container(
-                                child: Center(
-                                    child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 15,
-                                  color: Colors.white,
-                                )),
-                                height: 34,
-                                width: 34,
-                                decoration: BoxDecoration(
-                                  color: WidgetColors.primaryColor,
-                                  borderRadius: BorderRadius.circular(17),
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (c) => LandingPage()));
+                                },
+                              )
+                            ])),
+                    Container(
+                        height: heightcon,
+                        width: double.infinity,
+                        color: Color(0xffFFECB3),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              getRow(
+                                  "Others",
+                                  Icon(
+                                    Icons.info,
+                                    color: Colors.white,
+                                  )),
+                              GestureDetector(
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: 15),
+                                  child: Container(
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 15,
+                                      color: Colors.white,
+                                    )),
+                                    height: 34,
+                                    width: 34,
+                                    decoration: BoxDecoration(
+                                      color: WidgetColors.primaryColor,
+                                      borderRadius: BorderRadius.circular(17),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (c) => LandingPage()));
-                            },
-                          )
-                        ])),
-              ],
-            ),
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (c) => LandingPage()));
+                                },
+                              )
+                            ])),
+                  ],
+                ),
+              )
+            ],
           )
         ],
       ),

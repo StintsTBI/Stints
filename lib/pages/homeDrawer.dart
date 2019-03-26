@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stints/assets/constants.dart';
-import 'package:stints/pages/profileDetails.dart';
+import 'package:stints/pages/profile.dart';
 import 'package:stints/pages/profileEdit.dart';
 import 'package:stints/widgets/text_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -55,7 +55,7 @@ class HomeDrawer extends StatelessWidget {
                                 ),
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (c) => ProfileDetails()));
+                                      builder: (c) => Profile()));
                                 },
                               ),
                               Positioned(
@@ -255,7 +255,9 @@ class HomeDrawer extends StatelessWidget {
                                     "SIGN OUT",
                                     style: TextStyle(color: Colors.white),
                                   ),
-                                  onPressed: signout,
+                                  onPressed: () {
+                                    signout();
+                                  },
                                 ),
                               ],
                             );

@@ -175,6 +175,7 @@
     <orderEntry type="module" module-name="image_picker" />
     <orderEntry type="module" module-name="firebase_messaging" />
     <orderEntry type="module" module-name="flutter_local_notifications" />
+    <orderEntry type="module" module-name="shared_preferences" />
     <orderEntry type="module" module-name="firebase_auth" />
     <orderEntry type="module" module-name="firebase_database" />
     <orderEntry type="module" module-name="firebase_storage" />

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:stints/assets/constants.dart';
 import 'package:stints/pages/homeDrawer.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:stints/widgets/text_widgets.dart';
@@ -22,17 +21,9 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           elevation: 0.0,
         ),
-<<<<<<< HEAD
-        drawer: HomeDrawer(signout: widget.signout),
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: double.infinity,
-          color: WidgetColors.primaryColor,
-=======
         drawer: HomeDrawer(),
         body: LayoutBuilder(
           builder: layoutBuilder,
->>>>>>> 41d999e992eaf59ad05b1dc2d9a262b7c5e4d5aa
         ),
       ),
     );
@@ -318,7 +309,7 @@ class Internship extends StatelessWidget {
                   child: buildTitles(),
                 ),
                 Positioned(
-                  right: 0,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                  right: 0,
                   child: buildIconBar(),
                 ),
               ],
@@ -329,7 +320,7 @@ class Internship extends StatelessWidget {
               color: Colors.black12,
               borderRadius: BorderRadius.vertical(top: Radius.circular(12.0)),
             ),
-            margin: EdgeInsets.only(top: 12.0),                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+            margin: EdgeInsets.only(top: 12.0),
             padding: EdgeInsets.all(12.0),
             child: Row(
               children: <Widget>[

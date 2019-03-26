@@ -4,6 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:stints/pages/home.dart';
 
 final GoogleSignIn _googleSignIn = GoogleSignIn();
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -33,8 +34,10 @@ Future<FirebaseUser> handleSignIn() async {
 
     if (d.value.toString() == "null") {
       handleNewUser();
+      HomePage();
     } else {
       handleOldUser();
+      HomePage();
     }
   };
 

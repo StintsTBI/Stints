@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:stints/pages/SignUp.dart';
-import 'package:stints/pages/profile.dart';
 import 'package:stints/pages/signin.dart';
 import 'package:stints/services/authentication.dart';
 import 'package:stints/widgets/text_widgets.dart';
