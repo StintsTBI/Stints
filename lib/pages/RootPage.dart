@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stints/pages/home.dart';
 import 'package:stints/pages/landing.dart';
 import 'package:stints/services/authentication.dart';
@@ -20,11 +21,14 @@ enum AuthStatus {
 
 class _RootPageState extends State<RootPage> {
   String _userId = "";
+  SharedPreferences prefs;
 
   void _onLoggedIn() {
     widget.auth.getCurrentUser().then((user) {
       setState(() {
         _userId = user.uid.toString();
+        prefs.setString("uid", _userId);
+        prefs.setString("SigninType", "emailSignin");
         print(_userId);
         if (_userId != null || _userId != '') {
           Navigator.of(context).push(MaterialPageRoute(
@@ -39,6 +43,7 @@ class _RootPageState extends State<RootPage> {
 
   void _onSignedOut() {
     setState(() {
+      Navigator.of(context, rootNavigator: true).pop('dialog');
       authStatus = AuthStatus.NOT_LOGGED_IN;
       _userId = "";
     });

@@ -247,18 +247,15 @@ class HomeDrawer extends StatelessWidget {
                                       color: WidgetColors.primaryColor),
                                 ),
                                 RaisedButton(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(12))),
-                                  color: WidgetColors.primaryColor,
-                                  child: Text(
-                                    "SIGN OUT",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  onPressed: () {
-                                    signout();
-                                  },
-                                ),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(12))),
+                                    color: WidgetColors.primaryColor,
+                                    child: Text(
+                                      "SIGN OUT",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    onPressed: signout),
                               ],
                             );
                           });

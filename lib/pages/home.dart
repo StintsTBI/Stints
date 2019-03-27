@@ -21,7 +21,9 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           elevation: 0.0,
         ),
-        drawer: HomeDrawer(),
+        drawer: HomeDrawer(
+          signout: widget.signout,
+        ),
         body: LayoutBuilder(
           builder: layoutBuilder,
         ),

@@ -1,16 +1,35 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:stints/assets/constants.dart';
 import 'package:stints/pages/landing.dart';
 import 'package:stints/pages/profileDetails.dart';
 import 'package:stints/widgets/text_widgets.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Profile extends StatelessWidget {
+  SharedPreferences prefs;
+  String uid;
   @override
   Widget build(BuildContext context) {
+    print("user id");
+    //final Future<SharedPreferences> prefs = SharedPreferences.getInstance();
+
+    Future getstring() async {
+      prefs = await SharedPreferences.getInstance();
+      String uid = prefs.getString("uid");
+    }
+
     double height = MediaQuery.of(context).size.height;
 
     final double heightcon = (height - 390) / 5;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          getstring();
+          print(uid);
+        },
+      ),
       body: Stack(
         children: <Widget>[
           ClipPath(
