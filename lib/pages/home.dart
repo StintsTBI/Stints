@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:stints/pages/homeDrawer.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:stints/widgets/text_widgets.dart';
@@ -11,10 +12,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  /*  @override
+  dispose() {R
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    super.dispose();
+  } */
+
   double small = 600;
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     print(MediaQuery.of(context).size.width);
     return SafeArea(
       child: Scaffold(
@@ -440,7 +463,7 @@ class Internship extends StatelessWidget {
   Widget buildPosted() {
     return Padding(
       padding: const EdgeInsets.all(12.0),
-      child: SmallText(
+      child: SmallTextTab(
         posted,
         color: Colors.white,
       ),
@@ -465,7 +488,7 @@ class Internship extends StatelessWidget {
         vertical: 4,
         horizontal: 8,
       ),
-      child: SmallText(
+      child: SmallTextTab(
         tag,
         // color: Colors.white,
       ),

@@ -87,7 +87,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      SmallText(
+                      SmallTextTab(
                         "Your Bookmarks",
                         color: Colors.white,
                       ),
@@ -95,7 +95,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                         width: 50,
                       ),
                       GestureDetector(
-                        child: SmallText(
+                        child: SmallTextTab(
                           "Next >>",
                           color: Colors.white,
                         ),

@@ -12,6 +12,8 @@ class Profile extends StatelessWidget {
   String uid;
   @override
   Widget build(BuildContext context) {
+    var short = MediaQuery.of(context).size.shortestSide;
+    bool select = short < 600;
     print("user id");
     //final Future<SharedPreferences> prefs = SharedPreferences.getInstance();
 
@@ -53,20 +55,27 @@ class Profile extends StatelessWidget {
                     height: 50,
                   ),
                   Container(
-                    height: 80,
-                    width: 80,
+                    height: select == true ? 80 : 160,
+                    width: select == true ? 80 : 160,
                     decoration: BoxDecoration(
                         color: Colors.yellow,
-                        borderRadius: BorderRadius.circular(40)),
+                        borderRadius: BorderRadius.circular(
+                          select == true ? 40 : 80,
+                        )),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Center(
-                    child: NormalText(
-                      "Ashwin ram",
-                      color: Colors.white,
-                    ),
+                    child: select == true
+                        ? NormalText(
+                            "Ashwin ram",
+                            color: Colors.white,
+                          )
+                        : NormalTextTab(
+                            "Ashwin ram",
+                            color: Colors.white,
+                          ),
                   ),
                   SizedBox(
                     height: 10,
@@ -82,14 +91,19 @@ class Profile extends StatelessWidget {
                     height: 10,
                   ),
                   Center(
-                    child: SmallText(
-                      "Profile is 90% completed",
-                      color: Colors.white.withOpacity(0.79),
-                    ),
+                    child: select == true
+                        ? SmallText(
+                            "Profile is 90% completed",
+                            color: Colors.white.withOpacity(0.79),
+                          )
+                        : SmallTextTab(
+                            "Profile is 90% completed",
+                            color: Colors.white.withOpacity(0.79),
+                          ),
                   ),
                 ],
               ),
-              height: 400,
+              height: select == true ? 400 : 600,
               width: double.infinity,
               color: WidgetColors.primaryColor,
             ),
@@ -99,7 +113,7 @@ class Profile extends StatelessWidget {
             scrollDirection: Axis.vertical,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 390),
+                padding: EdgeInsets.only(top: select == true ? 400 : 600),
                 child: Column(
                   children: <Widget>[
                     Container(
@@ -109,28 +123,18 @@ class Profile extends StatelessWidget {
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              getRow(
-                                  "My Profile",
-                                  Icon(Icons.account_circle,
-                                      color: Colors.white)),
+                              select == true
+                                  ? getRow(
+                                      "My Profile",
+                                      Icon(Icons.account_circle,
+                                          color: Colors.white))
+                                  : getRowTab(
+                                      "My Profile",
+                                      Icon(Icons.account_circle,
+                                          size: 50, color: Colors.white)),
                               GestureDetector(
-                                child: Padding(
-                                  padding: EdgeInsets.only(right: 15),
-                                  child: Container(
-                                    child: Center(
-                                        child: Icon(
-                                      Icons.arrow_forward_ios,
-                                      size: 15,
-                                      color: Colors.white,
-                                    )),
-                                    height: 34,
-                                    width: 34,
-                                    decoration: BoxDecoration(
-                                      color: WidgetColors.primaryColor,
-                                      borderRadius: BorderRadius.circular(17),
-                                    ),
-                                  ),
-                                ),
+                                child: getIcon(select == true ? 15 : 30,
+                                    select == true ? 34 : 68),
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (c) => ProfileDetails()));
@@ -144,28 +148,18 @@ class Profile extends StatelessWidget {
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              getRow(
-                                  "Accademic details",
-                                  Icon(Icons.insert_drive_file,
-                                      color: Colors.white)),
+                              select == true
+                                  ? getRow(
+                                      "Accademic details",
+                                      Icon(Icons.account_circle,
+                                          color: Colors.white))
+                                  : getRowTab(
+                                      "Accademic details",
+                                      Icon(Icons.school,
+                                          size: 50, color: Colors.white)),
                               GestureDetector(
-                                child: Padding(
-                                  padding: EdgeInsets.only(right: 15),
-                                  child: Container(
-                                    child: Center(
-                                        child: Icon(
-                                      Icons.arrow_forward_ios,
-                                      size: 15,
-                                      color: Colors.white,
-                                    )),
-                                    height: 34,
-                                    width: 34,
-                                    decoration: BoxDecoration(
-                                      color: WidgetColors.primaryColor,
-                                      borderRadius: BorderRadius.circular(17),
-                                    ),
-                                  ),
-                                ),
+                                child: getIcon(select == true ? 15 : 30,
+                                    select == true ? 34 : 68),
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (c) => LandingPage()));
@@ -179,26 +173,18 @@ class Profile extends StatelessWidget {
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              getRow("Area of interest",
-                                  Icon(Icons.dashboard, color: Colors.white)),
+                              select == true
+                                  ? getRow(
+                                      "Area of intrest",
+                                      Icon(Icons.account_circle,
+                                          color: Colors.white))
+                                  : getRowTab(
+                                      "Area of intrest",
+                                      Icon(Icons.drafts,
+                                          size: 50, color: Colors.white)),
                               GestureDetector(
-                                child: Padding(
-                                  padding: EdgeInsets.only(right: 15),
-                                  child: Container(
-                                    child: Center(
-                                        child: Icon(
-                                      Icons.arrow_forward_ios,
-                                      size: 15,
-                                      color: Colors.white,
-                                    )),
-                                    height: 34,
-                                    width: 34,
-                                    decoration: BoxDecoration(
-                                      color: WidgetColors.primaryColor,
-                                      borderRadius: BorderRadius.circular(17),
-                                    ),
-                                  ),
-                                ),
+                                child: getIcon(select == true ? 15 : 30,
+                                    select == true ? 34 : 68),
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (c) => LandingPage()));
@@ -212,26 +198,18 @@ class Profile extends StatelessWidget {
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              getRow("Settings",
-                                  Icon(Icons.settings, color: Colors.white)),
+                              select == true
+                                  ? getRow(
+                                      "Settings",
+                                      Icon(Icons.account_circle,
+                                          color: Colors.white))
+                                  : getRowTab(
+                                      "Settings",
+                                      Icon(Icons.settings,
+                                          size: 50, color: Colors.white)),
                               GestureDetector(
-                                child: Padding(
-                                  padding: EdgeInsets.only(right: 15),
-                                  child: Container(
-                                    child: Center(
-                                        child: Icon(
-                                      Icons.arrow_forward_ios,
-                                      size: 15,
-                                      color: Colors.white,
-                                    )),
-                                    height: 34,
-                                    width: 34,
-                                    decoration: BoxDecoration(
-                                      color: WidgetColors.primaryColor,
-                                      borderRadius: BorderRadius.circular(17),
-                                    ),
-                                  ),
-                                ),
+                                child: getIcon(select == true ? 15 : 30,
+                                    select == true ? 34 : 68),
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (c) => LandingPage()));
@@ -245,30 +223,18 @@ class Profile extends StatelessWidget {
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              getRow(
-                                  "Others",
-                                  Icon(
-                                    Icons.info,
-                                    color: Colors.white,
-                                  )),
+                              select == true
+                                  ? getRow(
+                                      "Others",
+                                      Icon(Icons.account_circle,
+                                          color: Colors.white))
+                                  : getRowTab(
+                                      "Others",
+                                      Icon(Icons.warning,
+                                          size: 50, color: Colors.white)),
                               GestureDetector(
-                                child: Padding(
-                                  padding: EdgeInsets.only(right: 15),
-                                  child: Container(
-                                    child: Center(
-                                        child: Icon(
-                                      Icons.arrow_forward_ios,
-                                      size: 15,
-                                      color: Colors.white,
-                                    )),
-                                    height: 34,
-                                    width: 34,
-                                    decoration: BoxDecoration(
-                                      color: WidgetColors.primaryColor,
-                                      borderRadius: BorderRadius.circular(17),
-                                    ),
-                                  ),
-                                ),
+                                child: getIcon(select == true ? 15 : 30,
+                                    select == true ? 34 : 68),
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (c) => LandingPage()));
@@ -297,6 +263,43 @@ Widget getRow(String name, Icon ic) {
             width: 20,
           ),
           SmallText(name),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget getIcon(double s, double side) {
+  return Padding(
+    padding: EdgeInsets.only(right: side == 34 ? 15 : 30),
+    child: Container(
+      child: Center(
+          child: Icon(
+        Icons.arrow_forward_ios,
+        size: s,
+        color: Colors.white,
+      )),
+      height: side,
+      width: side,
+      decoration: BoxDecoration(
+        color: WidgetColors.primaryColor,
+        borderRadius: BorderRadius.circular(side == 34 ? 17 : 34),
+      ),
+    ),
+  );
+}
+
+Widget getRowTab(String name, Icon ic) {
+  return Padding(
+    padding: EdgeInsets.only(left: 27),
+    child: Container(
+      child: Row(
+        children: <Widget>[
+          ic,
+          SizedBox(
+            width: 40,
+          ),
+          SmallTextTab(name),
         ],
       ),
     ),

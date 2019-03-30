@@ -26,6 +26,30 @@ class SmallText extends StatelessWidget {
   }
 }
 
+class SmallTextTab extends StatelessWidget {
+  const SmallTextTab(
+    this.text, {
+    Key key,
+    this.color,
+  }) : super(key: key);
+
+  final String text;
+
+  ///Default value is WidgetColors.black
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: color,
+        fontSize: 2 * TextSize.small,
+      ),
+    );
+  }
+}
+
 ///This is a normal text
 class NormalText extends StatelessWidget {
   const NormalText(
@@ -44,6 +68,28 @@ class NormalText extends StatelessWidget {
       style: TextStyle(
         color: color,
         fontSize: TextSize.medium,
+      ),
+    );
+  }
+}
+
+class NormalTextTab extends StatelessWidget {
+  const NormalTextTab(
+    this.text, {
+    Key key,
+    this.color,
+  }) : super(key: key);
+
+  final String text;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: color,
+        fontSize: 2 * TextSize.medium,
       ),
     );
   }
@@ -96,6 +142,31 @@ class Heading extends StatelessWidget {
         color: color,
         fontWeight: FontWeight.bold,
         fontSize: TextSize.extraLarge,
+      ),
+    );
+  }
+}
+
+class HeadingTab extends StatelessWidget {
+  const HeadingTab(
+    this.text, {
+    //Key key,
+    this.color = WidgetColors.black,
+  }); // super(key: key);
+
+  final String text;
+
+  ///Default value is WidgetColors.black
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: color,
+        fontWeight: FontWeight.bold,
+        fontSize: 2 * TextSize.extraLarge,
       ),
     );
   }
